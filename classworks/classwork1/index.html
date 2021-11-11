@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+<script>
+    // 1. Створити масив з 10 чисел (можна використовувати Math.random Та Math.floor). Скласти результат цих чисел
+    // в змінній result.
+    let arr = [18, 93, 125, 356, 556, 662, 810, 971, 1002, 1538];
+    let result = arr[0] + arr[1] + arr[2] + arr[3] + arr[4] + arr[5] + arr[6] + arr[7] + arr[8] + arr[9];
+    console.log(result);
+
+
+    // 2. Створити об'єкт book з наступними полями  - назва, кількість сторінок, жанр
+
+    let book = {
+        name: 'The Adventures of Tom Sawyer',
+        pages: 544,
+        genre: 'novel'
+    };
+
+
+    // 3. Створити об'єкт book з наступними полями  - назва, кількість сторінок, жанр, автори
+
+    let book1 = {
+        name: 'Harry Potter and the Philosophers Stone',
+        pages: 223,
+        genre: 'novel',
+        author: 'Joanne Rowling'
+    }
+
+
+
+    // 4. Створити маcив об'єктів book з наступними полями  - назва, кількість сторінок, жанр, автори.
+    // Вивести кожну книгу як окремий об'єкт
+
+    let book2 = [
+        {
+            name: 'Love Story',
+            pages: 131,
+            genre: 'novel',
+            author: 'Erich Segal'
+        },
+        {
+            name: 'A Christmas Carol',
+            pages: 144,
+            genre: 'fairy tale',
+            author: 'Charles Dickens'
+        },
+        {
+            name: 'The Old Man And The Sea',
+            pages: 127,
+            genre: 'Literary Fiction',
+            author: 'Ernest Hemingway'
+        }
+    ];
+    console.log(book2[0]);
+    console.log(book2[1]);
+    console.log(book2[2]);
+
+
+
+
+
+    // 5. Напишіть код, який вираховує площу прямокутника висотою 23см. (змінна height) та шириною 10см (змінна width).
+    // Значення площі зберігати в змінній s.
+
+    let height = 23;
+    let width = 10;
+    let s = height * width;
+    console.log(s);
+
+    // 6. Напиши код, який знаходить об'єм циліндра заввишки 10м (змінна heightC) та діаметром основи 4м (dC),
+    // результат помістіть у змінну v.
+
+    let heightC = 10;
+    let dC = 4;
+    const p = 3.14;
+    let radius = dC / 2;
+    let v = p * (radius ** 2) * heightC;
+    console.log(v);
+
+    // 7. У прямокутного трикутника дві сторони n (зі значенням 3) та m (зі значенням 4).
+    // Знайдіть гіпотенузу k за теоремою Піфагора (потрібно використовувати функцію Math.pow (число, ступінь)
+    // або оператор зведення в ступінь **).
+
+    let n = 3;
+    let m = 4;
+    let k = (n ** 2) + (m ** 2);
+    console.log(k);
+
+
+</script>
+</body>
+</html>
