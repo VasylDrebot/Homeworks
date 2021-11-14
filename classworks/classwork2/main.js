@@ -2,8 +2,8 @@
 //     Потрібно знайти та вивести максимальне число з тих двох .
 //     Також потрібно врахувати коли введені рівні числа.
 
-let firstNumber = prompt('Please enter first number');
-let secondNumber = prompt('Please enter second number');
+let firstNumber = +prompt('Please enter first number');
+let secondNumber = +prompt('Please enter second number');
 if (firstNumber > secondNumber) {
     console.log(firstNumber)
 } else if (firstNumber < secondNumber) {
@@ -63,7 +63,7 @@ if (typeof x === "number") {
 //     ВЧИТИСЯ. Якщо інша темпаретура, тоді виводимо повідомлення що сидимо вдома і вчимося ОНЛАЙН
 
 let temperature = 15;
-if (temperature >=10 && temperature <=22) {
+if (temperature >= 10 && temperature <= 22) {
     console.log('Ми йдемо вчитися')
 } else {
     console.log('Ми вчимось вдома онлайн')
