@@ -1,14 +1,14 @@
 // - Дано змінну time яка рівна числу від 0 до 59. Потрібно написати код, який перевірить, до якої четверті
 // години попадає число(в першу, другу, третю или четверту частину години).
 
-let time = 56;
-if (time <= 15) {
+let time = 30;
+if (time >= 1 && time <= 15) {
     console.log('Перша частина години')
-} else if (time <= 30) {
+} else if (time >= 16 && time <= 30) {
     console.log('Друга частина години')
-} else if (time <= 45) {
+} else if (time >= 31 && time <= 45) {
     console.log('Третя частина години')
-} else if (time <= 59) {
+} else if (time >= 46 && time <= 59) {
     console.log('Четверта частина години')
 } else {
     console.log('Something went wrong')
@@ -19,12 +19,12 @@ if (time <= 15) {
 // - У змінній day дано якесь число від 1 до 31. Потрібно визначити, у яку половину(декаду) місяця потрапляє
 // це число (у першу, другу чи третю).
 
-let day = 27;
-if (day <= 10) {
+let day = 10;
+if (day >= 1 && day <= 10) {
     console.log('Перша декада місяця')
-} else if (day <= 20) {
+} else if (day >= 11 && day <= 20) {
     console.log('Друга декада місяця')
-} else if (day <= 31) {
+} else if (day >= 21 && day <= 31) {
     console.log('Третя декада місяця')
 } else {
     console.log('Please try again')
@@ -121,9 +121,9 @@ if (year % 4 === 0) {
 // - Використовуючи конструкцію if..else, напишіть код, який запитуватиме: „Яка «офіційна» назва JavaScript?“
 // Якщо користувач вводить «ECMAScript», то показати: «Правильно!», інакше – відобразити: «Не знаєте? ECMAScript!
 //
-let answer = prompt('Яка «офіційна» назва JavaScript?');
-if (answer === 'ECMAScript') {
-    alert('Правильно!')
-} else {
-    alert('Не знаєте? ECMAScript!')
-}
+// let answer = prompt('Яка «офіційна» назва JavaScript?');
+// if (answer === 'ECMAScript') {
+//     alert('Правильно!')
+// } else {
+//     alert('Не знаєте? ECMAScript!')
+// }
