@@ -17,16 +17,16 @@ if (friends.length >= 3) {
 //   Знайти, яке з них є середнім (більше одного, але менше за інше). Перевірити, чи знаходиться перше
 //   число між двома іншими.
 
-// let number1 = prompt('Please enter a number');
-// let number2 = prompt('Please enter a number');
-// let number3 = prompt('Please enter a number');
-// if ((number1 < number2 && number2 < number3) || (number3 < number2 && number2 < number1)) {
-//     alert(number2);
-// } else if ((number2 < number1 && number1 < number3) || (number3 < number1 && number1 < number2)) {
-//     alert(number1);
-// } else if ((number1 < number3 && number3 > number2) || (number1 > number3 && number3 < number2)) {
-//     alert(number3);
-// }
+let number1 = +prompt('Please enter a number');
+let number2 = +prompt('Please enter a number');
+let number3 = +prompt('Please enter a number');
+if ((number1 < number2 && number2 < number3) || (number3 < number2 && number2 < number1)) {
+    alert(number2);
+} else if ((number2 < number1 && number1 < number3) || (number3 < number1 && number1 < number2)) {
+    alert(number1);
+} else if ((number1 < number3 && number3 > number2) || (number1 > number3 && number3 < number2)) {
+    alert(number3);
+}
 
 
 
