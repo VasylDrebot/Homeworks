@@ -54,7 +54,7 @@ for (p = 0; p < numbers.length; p++) {
 
 // 7. замінити кожне число кратне 3 на слово "okten"
 
-for (u = 0; u < numbers.length; u++) {
+for (let u = 0; u < numbers.length; u++) {
     if (numbers[u] % 3 === 0) {
         numbers[u] = 'okten'
     }
@@ -118,7 +118,7 @@ for (let d = numbers.length-1; d >= 0; d--) {
 }
 
 // 7. замінити кожне число кратне 3 на слово "okten"
-for (var z = numbers.length-1; z >= 0; z--) {
+for (let z = numbers.length-1; z >= 0; z--) {
     if (numbers[z] % 3 === 0) {
         numbers[z] = 'okten'
     }
