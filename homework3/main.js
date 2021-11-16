@@ -63,7 +63,7 @@ for (let f = 0; f < numbers1.length; f++) {
 // - Створити масив з 10 строкрових елементів. Вивести в консоль всі його елементи в циклі.
 
 let arrString = ['Greece', 'Turkey', 'Spain', 'Italy', 'France', 'Germany', 'Austria', 'Slovakia', 'Portugal', 'Ireland'];
-for (c = 0; c < arrString.length; c++) {
+for (let c = 0; c < arrString.length; c++) {
     console.log(arrString[c]);
 }
 
@@ -71,7 +71,7 @@ for (c = 0; c < arrString.length; c++) {
 // - Створити масив з 10 елементів будь-якого типу. Вивести в консоль всі його елементи в циклі.
 
 let anyArray = ['Madrid', true, 16, 985, -52, false, 510, 'Rome', 'Munich', 895];
-for (d = 0; d < anyArray.length; d++) {
+for (let d = 0; d < anyArray.length; d++) {
     console.log(anyArray[d])
 }
 
@@ -79,7 +79,7 @@ for (d = 0; d < anyArray.length; d++) {
 //   За допомогою if та typeof вивести тільки булеві елементи
 
 let anyArray1 = ['river', true, 2, 8, 19, -35, false, 'lake', 29, 86.5];
-for (l = 0; l < anyArray1.length; l++) {
+for (let l = 0; l < anyArray1.length; l++) {
     if (typeof anyArray1[l] === 'boolean')
         console.log(anyArray1[l])
 }
@@ -89,7 +89,7 @@ for (l = 0; l < anyArray1.length; l++) {
 //   За допомогою if та typeof вивести тільки числові елементи
 let anyArray2 = [28, 45, 30.5, false, 'capital', true, 80, 'city', 'country', 65];
 j = 0;
-while (j < anyArray2.length) {
+while (let j < anyArray2.length) {
     if (typeof anyArray2[j] === "number")
         console.log(anyArray2[j])
     j++;
@@ -100,7 +100,7 @@ while (j < anyArray2.length) {
 
 let anyArray3 = ['Kate', 'Marry', false, 516, 253, true, 20.56, 'Michael', 'Alice', 'Nick'];
 m = 0;
-while (m < anyArray3.length) {
+while (let m < anyArray3.length) {
     if (typeof anyArray3[m] === "string")
         console.log(anyArray3[m])
     m++;
@@ -122,28 +122,28 @@ emptyArray[6] = 29;
 emptyArray[7] = 'check';
 emptyArray[8] = 50;
 emptyArray[9] = 82;
-for (e = 0; e < emptyArray.length; e++) {
+for (let e = 0; e < emptyArray.length; e++) {
     console.log(emptyArray[e])
 }
 
 
 // - Створити цикл for на 10  ітерацій з кроком 1. Вивести поточний номер кроку через console.log та document.write
 
-for (t = 0; t < 10; t++) {
+for (let t = 0; t < 10; t++) {
     console.log(`${t}`)
     document.write(`${t}`)
 }
 
 // - Створити цикл for на 100 ітерацій з кроком 1. Вивести поточний номер кроку через console.log та document.write
 
-for (g = 0; g < 100; g++) {
+for (let g = 0; g < 100; g++) {
     console.log(`${g}`)
     document.write(`${g}`)
 }
 
 // - Створити цикл for на 100 ітерацій з кроком 2. Вивести поточний номер кроку через console.log та document.write
 
-for (z = 0; z < 100; z += 2) {
+for (let z = 0; z < 100; z += 2) {
     console.log(`${z}`)
     document.write(`${z}`)
 }
@@ -151,14 +151,14 @@ for (z = 0; z < 100; z += 2) {
 
 // - Створити цикл for на 100 ітерацій. Вивести тільки парні кроки. через console.log + document.write
 
-for (y = 0; y < 100; y++) {
+for (let y = 0; y < 100; y++) {
     if (y % 2 === 0)
         console.log(`${y}`)
 }
 
 // - Створити цикл for на 100 ітерацій. Вивести тільки непарні кроки. через console.log + document.write
 
-for (s = 0; s < 100; s++) {
+for (let s = 0; s < 100; s++) {
     if (s % 2 === 1) {
         console.log(`${s}`)
     }
