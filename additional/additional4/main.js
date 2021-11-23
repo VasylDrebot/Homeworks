@@ -1,19 +1,19 @@
 // - створити функцію, яка якщо приймає один аргумент, просто вивдоить його, якщо два аргументи - складає
 //   або конкатенує їх між собою.
 
-// function getArguments () {
-//     if (arguments.length === 1) {
-//         console.log(arguments)
-//     } else if (arguments.length === 2) {
-//         console.log(arguments[0] + arguments[1])
-//     }
-// }
-//
-//
-// getArguments(2);
-//
-//
-// getArguments(5,'6');
+function getArguments () {
+    if (arguments.length === 1) {
+        console.log(arguments)
+    } else if (arguments.length === 2) {
+        console.log(arguments[0] + arguments[1])
+    }
+}
+
+
+getArguments(2);
+
+
+getArguments(5, 6);
 
 
 
@@ -40,7 +40,7 @@ function getSum (arr1, arr2) {
         const sum = arr1El + arr2El;
         arrSum.push(sum);
 
-        arrSum.push(arr1[index] + arr2[index]);
+        // arrSum.push(arr1[index] + arr2[index]);
     }
 
     return arrSum;
@@ -61,19 +61,19 @@ console.log(sumResult);
 // EXAMPLE:
 //     [{name: 'Dima', age: 13}, {model: 'Camry'}]  ===> [ name, age, model ]
 
-// let arrayObj = [{name: 'Kate', age: 28, model: 'Toyota'}]
-// function getKey (arrayObject) {
-//     let emptyArray = [];
-//     for (let i = 0; i < arrayObject.length; i++) {
-//         for (const arrayObjKey in arrayObject[i]) {
-//             emptyArray.push(arrayObjKey);
-//         }
-//     }
-//     return emptyArray;
-// }
-//
-// let arrRes = getKey(arrayObj);
-// console.log(arrRes);
+let arrayObj = [{name: 'Kate', age: 28, model: 'Toyota'}]
+function getKey (arrayObject) {
+    let emptyArray = [];
+    for (let i = 0; i < arrayObject.length; i++) {
+        for (const arrayObjKey in arrayObject[i]) {
+            emptyArray.push(arrayObjKey);
+        }
+    }
+    return emptyArray;
+}
+
+let arrRes = getKey(arrayObj);
+console.log(arrRes);
 
 
 
@@ -83,18 +83,18 @@ console.log(sumResult);
 //     [{name: 'Dima', age: 13}, {model: 'Camry'}]  ===> [ Dima, 13, Camry ]
 
 
-// let arrayObj1 = [{name: 'Marry', age: 27},  {model: 'Mitsubishi'}]
-// function getValue (arrayObj1) {
-//     let emptyArr1 = []
-//     for (let arrayObjElem of arrayObj1) {
-//         for (let arrayObjElemKey in arrayObjElem) {
-//             emptyArr1.push(arrayObjElem[arrayObjElemKey])
-//         }
-//     }
-//     return emptyArr1;
-// }
-//
-// let numValue = getValue(arrayObj1);
-// console.log(numValue);
+let arrayObj1 = [{name: 'Marry', age: 27},  {model: 'Mitsubishi'}]
+function getValue (arrayObj1) {
+    let emptyArr1 = []
+    for (let arrayObjElem of arrayObj1) {
+        for (let arrayObjElemKey in arrayObjElem) {
+            emptyArr1.push(arrayObjElem[arrayObjElemKey])
+        }
+    }
+    return emptyArr1;
+}
+
+let numValue = getValue(arrayObj1);
+console.log(numValue);
 
 

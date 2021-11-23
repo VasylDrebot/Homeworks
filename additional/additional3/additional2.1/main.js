@@ -39,6 +39,10 @@ for (let d = 0; d < 20; d++) {
 }
 console.log(arr);
 
+// function getRandomArbitrary(min, max) {
+//     return Math.random() * (max - min) + min;
+// }
+
 // 2. Вивести за допомогою console.log кожен третій елемент
 
 for (let i = 2; i < arr.length; i+=3) {
@@ -156,11 +160,19 @@ for (let m = 0; m < newArray1.length; m++) {
 
 for (let i = 0; i < usersWithId.length; i++) {
     let userEl = usersWithId[i];
-    for (let cityEl of citiesWithId) {
-        if (userEl.id === cityEl.user_id) {
-            userEl.cityEl = cityEl;
-        }
-    }
+
+    const city = citiesWithId.find(el => userEl.id === el.user_id);
+
+    console.log(city);
+
+    userEl.cityEl = city;
+
+    // for (let cityEl of citiesWithId) {
+    //     if (userEl.id === cityEl.user_id) {
+    //         userEl.cityEl = cityEl;
+    //     }
+    // }
+
 }
 console.log(usersWithId);
 
