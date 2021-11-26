@@ -111,27 +111,6 @@ console.log(filter);
 // document.writeln(cutString('наслаждение',3)) // [нас,лаж,ден,ие]
 let word = 'наслаждение';
 
-// let cutString = (str, n) => {
-//     let arr = [];
-//     let substring = '';
-//
-//     for (let i = 0; i < str.length; i++) {
-//        if (substring.length < n) {
-//            substring += str[i];
-//        } else {
-//            arr.push(substring);
-//            substring = '';
-//            substring += str[i];
-//        }
-//     }
-//     console.log(arr);
-//     return arr;
-// }
-//
-// console.log(cutString(word, 3));
-
-
-
 let cutString = (str, n) => {
     const numOfSubstrings = Math.ceil(str.length / n);
     let arr = [];
