@@ -11,6 +11,7 @@
         .wrap {
             border: 3px solid seagreen;
             width: 50%;
+            margin-bottom: 10px;
         }
         .flex {
             display: flex;
@@ -31,12 +32,13 @@
             width: 67%;
             border: 2px solid darkseagreen;
             text-align: center;
-
         }
-
-
-
-
+        .list {
+            width: 90%;
+            height: 90%;
+            border: 2px solid skyblue;
+            margin-left: 10px;
+        }
 
     </style>
 </head>
@@ -209,6 +211,7 @@
             hourDuration.classList.add('info1');
             hourDuration.innerText = `${item.hourDuration}`;
             let modules = document.createElement('ul');
+            modules.classList.add('list');
 
 
             mainDiv.appendChild(title);
@@ -225,22 +228,8 @@
             let li = document.createElement('li');
             li.innerText = `${module}`
             modules.appendChild(li);
-
         }
-
-
     }
-
-
-
-
-
-
-
-
-
-
-
 
 </script>
 </body>
