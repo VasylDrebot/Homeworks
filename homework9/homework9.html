@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Title</title>
+  <style>
+    .container {
+      width: 300px;
+      height: 300px;
+      background: lightseagreen;
+    }
+
+    .wrap {
+      background: tomato;
+      color: cornflowerblue;
+      font-size: 50px;
+    }
+  </style>
+</head>
+<body>
+<ul class="menu"></ul>
+
+
+<div class="container"></div>
+<div class="target"></div>
+<div class="target"></div>
+<script>
+  // Все робити за допомоги js.
+  // - створити блок,
+  //         - додати йому класи wrap, collapse, alpha, beta
+  // - додати стилі(довільні значення) : колір фону, колір тексту, розмір тексту
+  // - додати цей блок в body.
+  // - клонувати його повністю, та додати клон в body.
+
+
+  let div = document.createElement('div');
+  div.innerText = 'Hello world';
+  document.body.appendChild(div);
+  div.classList.add('wrap', 'collapse', 'alpha', 'beta' );
+
+  let container = document.getElementsByClassName('container')[0];
+  console.log(container);
+  container.append(div);
+
+  let divNode = div.cloneNode(true);
+  divNode.innerText = 'Hello';
+  document.body.appendChild(divNode);
+  container.append(divNode);
+
+
+  // - Є масив:
+  //         ['Main','Products','About us','Contacts']
+  // Взяти файл template1.html та додати в нього скріпт котрий для кожного елементу масиву створює li та додає його до блоку .menu
+  // Завдання робити через цикли.
+
+  let ulElement = document.getElementsByClassName('menu')[0];
+
+  let array = ['Main','Products','About us','Contacts'];
+
+  for (const string of array) {
+    let liElement = document.createElement('li');
+    liElement.innerText = `${string}`;
+
+    ulElement.appendChild(liElement);
+  }
+  //
+  // - Є масив
+  // Для кожного елементу масиву зробити блок в якому вивести інформацію про title та monthDuration
+  // Завдання робити через цикли.
+
+  let divElement = document.getElementsByClassName('target')[0];
+
+  let coursesAndDurationArray = [
+    {title: 'JavaScript Complex', monthDuration: 5},
+    {title: 'Java Complex', monthDuration: 6},
+    {title: 'Python Complex', monthDuration: 6},
+    {title: 'QA Complex', monthDuration: 4},
+    {title: 'FullStack', monthDuration: 7},
+    {title: 'Frontend', monthDuration: 4}
+  ];
+
+
+  for (const coursesElement of coursesAndDurationArray) {
+    let divEl = document.createElement('div');
+    divEl.innerText = `${coursesElement.title} - ${coursesElement.monthDuration}`;
+
+    divElement.appendChild(divEl);
+  }
+
+
+  // - Є масив
+  // За допомоги скріпта для кожного елементу масиву зробити <div class='item'> ,  в якому буде <h1 class='heading'>  з title  елементу, та <p class='description'> з monthDuration елементу.
+  //         Завдання робити через цикли.
+
+  let divElement2 = document.getElementsByClassName('target')[1];
+
+  let coursesAndDurationArr = [
+    {title: 'JavaScript Complex', monthDuration: 5},
+    {title: 'Java Complex', monthDuration: 6},
+    {title: 'Python Complex', monthDuration: 6},
+    {title: 'QA Complex', monthDuration: 4},
+    {title: 'FullStack', monthDuration: 7},
+    {title: 'Frontend', monthDuration: 4}
+  ];
+
+  for (const arrElement of coursesAndDurationArr) {
+    let mainDiv = document.createElement('div');
+    mainDiv.classList.add('item');
+    let h1El = document.createElement('h1');
+    h1El.classList.add('heading');
+    h1El.innerText = `${arrElement.title}`;
+    let p = document.createElement('p');
+    p.classList.add('description')
+    p.innerText = `${arrElement.monthDuration}`;
+
+
+
+    mainDiv.appendChild(h1El);
+    mainDiv.appendChild(p);
+    divElement2.appendChild(mainDiv);
+  }
+
+</script>
+</body>
+</html>
