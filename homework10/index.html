@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .container {
+            border: 2px solid cornflowerblue;
+            width: 25%;
+            line-height: 50px;
+        }
+        .items.display {
+            display: none;
+        }
+       .offers {
+           margin-left: 40px;
+           background: tomato;
+           width: 50px;
+           height: 35px;
+       }
+    </style>
+</head>
+<body>
+<button id="btn">click</button>
+
+<button id="text">click</button>
+<div id="text2">Text</div>
+
+<form action="/someaction" id="f1">
+    <input type="number" name="age">
+    <button>save</button>
+</form>
+
+
+<div class="container">
+    <button class="offers">Menu</button>
+    <ul class="items">
+        <li>Beverage</li>
+        <li>Snacks</li>
+        <li>Burgers</li>
+        <li>Desserts</li>
+        <li>Special offers</li>
+        <li>Dish of the day</li>
+    </ul>
+</div>
+
+<div id="target"></div>
+
+<script>
+     let elementById = document.getElementById('btn');
+    elementById.onclick = function () {
+        elementById.style.display = 'none';
+    }
+
+     let element2 = document.getElementById('text');
+    let element1 = document.getElementById('text2');
+     element2.onclick = function () {
+         element1.style.display = 'none';
+     }
+
+
+    let item = document.getElementById('f1');
+
+    item.onsubmit = function (e) {
+        e.preventDefault();
+        let age = this.age.value;
+        if (age < 18) {
+            alert('Ваш вік менший!');
+        } else if (age >= 18) {
+            alert('Ваш вік достатній');
+        }
+    }
+
+
+    let className = document.getElementsByClassName('items')[0];
+    let element = document.getElementsByClassName('offers')[0];
+
+    element.onclick = function () {
+            className.classList.toggle('display');
+    }
+
+
+    let arrComment = [
+        {name: 'Kate', text: 'It was amazing. I appreciate'},
+        {name: 'Lena', text: 'Nice hotel, nice staff, wonderful view. Thanks a lot'},
+        {name: 'Michael', text: 'I`m so excited to be here. Thanks a lot for this opportunity'},
+        {name: 'Natalie', text: 'I think we can handle it.'},
+        {name: 'Andrew', text: 'Do not give up. Keep going'},
+        {name: 'Alice', text: 'It is one of the best song ever'},
+    ];
+
+    let target = document.getElementById('target');
+
+    for (const comment of arrComment) {
+        let mainDiv = document.createElement('div');
+        let h2 = document.createElement('h2');
+        h2.innerText = `${comment.name}`;
+        let p = document.createElement('p');
+        p.innerText = `${comment.text}`;
+        let div = document.createElement('div');
+        let button1 = document.createElement('button');
+        button1.innerText = 'Згорнути';
+        let button2 = document.createElement('button');
+        button2.innerText = 'Розгорнути';
+        button2.style.background = 'green';
+        button1.onclick = function () {
+            p.style.display = 'none';
+        }
+
+        button2.onclick = function () {
+            p.style.display = 'block';
+        }
+
+
+        mainDiv.appendChild(h2);
+        mainDiv.appendChild(p);
+        mainDiv.appendChild(div)
+        div.appendChild(button1);
+        div.appendChild(button2);
+        target.appendChild(mainDiv);
+    }
+
+
+</script>
+</body>
+</html>
