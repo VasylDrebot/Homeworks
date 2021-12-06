@@ -16,12 +16,12 @@
         .items.display {
             display: none;
         }
-       .offers {
-           margin-left: 40px;
-           background: tomato;
-           width: 50px;
-           height: 35px;
-       }
+        .offers {
+            margin-left: 40px;
+            background: tomato;
+            width: 50px;
+            height: 35px;
+        }
     </style>
 </head>
 <body>
@@ -60,14 +60,14 @@
     }
 
     // - Создайте кнопку, при клике на которую, она будет скрывать сама себя.
-     let elementById = document.getElementById('btn');
+    let elementById = document.getElementById('btn');
     elementById.onclick = function () {
         elementById.style.display = 'none';
     }
 
 
-        // - створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку зчитати
-        //   інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
+    // - створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку зчитати
+    //   інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
 
     let item = document.getElementById('f1');
 
@@ -81,19 +81,19 @@
         }
     }
 
-        // - Создайте меню, которое раскрывается/сворачивается при клике
+    // - Создайте меню, которое раскрывается/сворачивается при клике
 
     let className = document.getElementsByClassName('items')[0];
     let element = document.getElementsByClassName('offers')[0];
 
     element.onclick = function () {
-            className.classList.toggle('display');
+        className.classList.toggle('display');
     }
 
 
-        // - Создать список комментариев , пример объекта коментария - {title : 'lorem', body:'lorem ipsum dolo sit ameti'}.
-        // Вывести список комментариев в документ, каждый в своем блоке.
-        // Добавьте каждому комментарию по кнопке для сворачивания его body.
+    // - Создать список комментариев , пример объекта коментария - {title : 'lorem', body:'lorem ipsum dolo sit ameti'}.
+    // Вывести список комментариев в документ, каждый в своем блоке.
+    // Добавьте каждому комментарию по кнопке для сворачивания его body.
 
     let arrComment = [
         {name: 'Kate', text: 'It was amazing. I appreciate'},
