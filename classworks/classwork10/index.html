@@ -106,26 +106,26 @@
     //     Якщо людина вводить слово і воно міститься в масиві не цензурних слів
     // кинути алерт з попередженням.
     //     Перевірку робити при натисканні на кнопку
-
-    let arrayWords = ['stupid', 'smell', 'silly', 'dummy', 'nuts'];
-    let item3 = document.forms.item3;
-    let button = document.getElementById('btn1');
-    button.style.marginBottom = '20px';
-
-
-    button.addEventListener('click', function (e) {
-        e.preventDefault();
-        let word = item3.word.value;
-        const isBadWordIncl = arrayWords.includes(word);
-        console.log(isBadWordIncl);
-        if (isBadWordIncl) {
-            alert('it is a bad word');
-        } else if ( word === ''){
-            alert('Please try again');
-        } else {
-            alert('It is okay')
-        }
-    });
+    //
+    // let arrayWords = ['stupid', 'smell', 'silly', 'dummy', 'nuts'];
+    // let item3 = document.forms.item3;
+    // let button = document.getElementById('btn1');
+    // button.style.marginBottom = '20px';
+    //
+    //
+    // button.addEventListener('click', function (e) {
+    //     e.preventDefault();
+    //     let word = item3.word.value;
+    //     const isBadWordIncl = arrayWords.includes(word);
+    //     console.log(isBadWordIncl);
+    //     if (isBadWordIncl) {
+    //         alert('it is a bad word');
+    //     } else if ( word === ''){
+    //         alert('Please try again');
+    //     } else {
+    //         alert('It is okay')
+    //     }
+    // });
 
     // - Сворити масив не цензцрних слів.
     //     Сворити інпут текстового типу.
@@ -133,20 +133,20 @@
     //     Кинути алерт з попередженням у випадку якщо містить.
     //     Перевірку робити при натисканні на кнопку
 
-    let array = ['silly', 'nuts', 'crazy']
-    let item4 = document.forms.item4;
-    let btn = document.getElementById('button')
-
-    btn.onclick = function () {
-        let sentence = item4.word.value;
-        for (const arr of array) {
-            if (sentence.includes(arr)) {
-                alert('It includes a bad word')
-            } else {
-                alert('It does not include a bad word')
-            }
-        }
-    }
+    // let array = ['silly', 'nuts', 'crazy']
+    // let item4 = document.forms.item4;
+    // let btn = document.getElementById('button')
+    //
+    // btn.onclick = function () {
+    //     let sentence = item4.word.value;
+    //     for (const arr of array) {
+    //         if (sentence.includes(arr)) {
+    //             alert('It includes a bad word')
+    //         } else {
+    //             alert('It does not include a bad word')
+    //         }
+    //     }
+    // }
 
 
 
