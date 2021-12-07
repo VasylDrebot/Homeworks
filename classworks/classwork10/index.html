@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<form action="/something" id="item1">
+    <input type="text" name="username">
+    <input type="number" name="age">
+</form>
+
+<form action="/someaction" id="item2">
+    <input type="text" name="country">
+    <input type="text" name="city">
+</form>
+<button id="btn">Save</button>
+
+
+<form action="/table" id="table">
+    <input type="number" name="row">
+    <input type="number" name="cell">
+    <input type="text" name="content">
+</form>
+<button id="table1">Create table</button>
+
+<form action="/action" id="item3">
+    <input type="text" name="word">
+</form>
+<button id="btn1">save</button>
+
+
+<form action="/dosomething" id="item4">
+    <input type="text" name="word">
+</form>
+<button id="button">save</button>
+
+
+<script>
+    // - створити 2 форми  по 2 інпути в кожній. ствоирити кнопку при кліку на яку считується та виводиться на
+    // консоль інформація з цих 2х форм.
+    //     Кнопка повинна лежати за межами форм (Щоб ьуникнути  перезавантаження сторінки)
+    // Доступ до інпутів через Forms API. Отже дайте формі та інпутам всі необхідні атрибути.
+
+    let item1 = document.forms.item1;
+    console.log(item1);
+    let item2 = document.forms.item2;
+    console.log(item2);
+
+    let element2 = document.getElementById('btn');
+    console.log(element2);
+    element2.style.marginBottom = '20px';
+
+    element2.addEventListener("click", function () {
+        let name = item1.username.value;
+        let age = item1.age.value;
+        let country = item2.country.value;
+        let city = item2.city.value;
+        console.log({name: name, age: age, country: country, city: city});
+    });
+
+    // - Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
+    //     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
+    // (Додатковачастина для завдання)
+
+    let table = document.forms.table;
+
+    let element = document.getElementById('table1');
+    element.style.marginBottom = '20px';
+
+    element.addEventListener('click', function () {
+        let row = table.row.value;
+        let cell = table.cell.value;
+        let content = table.content.value
+
+        let createTable = (tr, td, info) => {
+            let table = document.createElement('table');
+            table.style.border = '1px solid green'
+
+            document.body.appendChild(table);
+
+            for (let i = 0; i < tr; i++) {
+                let tr = document.createElement('tr');
+                tr.style.border = '1px solid green';
+
+                for (let f = 0; f < td; f++) {
+                    let td = document.createElement('td');
+                    td.style.border = '1px solid green';
+                    td.innerText = info;
+                    table.appendChild(tr);
+                    tr.appendChild(td);
+                }
+            }
+
+        }
+        createTable(row, cell, content);
+    })
+
+
+    // - Сворити масив не цензцрних слів.
+    //     Сворити інпут текстового типу.
+    //     Якщо людина вводить слово і воно міститься в масиві не цензурних слів
+    // кинути алерт з попередженням.
+    //     Перевірку робити при натисканні на кнопку
+
+    let arrayWords = ['stupid', 'smell', 'silly', 'dummy', 'nuts'];
+    let item3 = document.forms.item3;
+    let button = document.getElementById('btn1');
+    button.style.marginBottom = '20px';
+
+
+    button.addEventListener('click', function (e) {
+        e.preventDefault();
+        let word = item3.word.value;
+        const isBadWordIncl = arrayWords.includes(word);
+        console.log(isBadWordIncl);
+        if (isBadWordIncl) {
+            alert('it is a bad word');
+        } else if ( word === ''){
+            alert('Please try again');
+        } else {
+            alert('It is okay')
+        }
+    });
+
+    // - Сворити масив не цензцрних слів.
+    //     Сворити інпут текстового типу.
+    //     Потрібно перевіряти чи не містить ціле речення в собі погані слова.
+    //     Кинути алерт з попередженням у випадку якщо містить.
+    //     Перевірку робити при натисканні на кнопку
+
+    let array = ['silly', 'nuts', 'crazy']
+    let item4 = document.forms.item4;
+    let btn = document.getElementById('button')
+
+    btn.onclick = function () {
+        let sentence = item4.word.value;
+        for (const arr of array) {
+            if (sentence.includes(arr)) {
+                alert('It includes a bad word')
+            } else {
+                alert('It does not include a bad word')
+            }
+        }
+    }
+
+
+
+</script>
+</body>
+</html>
