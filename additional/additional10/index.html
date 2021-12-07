@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .block {
+            display: none;
+        }
+
+        .second {
+            display: block;
+            background-color: lightgrey;
+            width: 169px;
+            height: 60px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+    <div class="item item1 child" id="title"></div>
+    <div class="item">Item</div>
+    <div class="item">Item</div>
+    <div class="item text">Item</div>
+    <div class="item">Item</div>
+    <div class="item">Item</div>
+    <div class="item">Item</div>
+    <div class="item">Item</div>
+    <div class="item child">Item</div>
+    <div class="item">Item</div>
+    <div class="item">Item</div>
+
+<h1 id="title1">Hello world!</h1>
+<h2 class="title2">Hello Okten!</h2>
+
+
+<div class="block">
+    <span id="popup"></span>
+</div>
+
+    <form action="/someaction" id="check">
+        <input type="checkbox" name="status">
+        <input type="checkbox" name="age">
+        <input type="checkbox" name="city">
+    </form>
+
+
+<script>
+    // - Описати скріпт, котрий, якщо доєднати до будь-якої сторінки дозволить зробити наступне:
+    //     При лівому кліку миші вивести в консоль інформацію про блок або елемент на який відбувся клік.
+    //     Інформація яку потрібно вивести: Назва тегу, список класів, список ід, розміри в форматі висота*ширина
+
+    // let children = document.body.children;
+    // // console.log(children);
+    //
+    // for (const child of children) {
+    //     child.addEventListener('click', function () {
+    //
+    //         if (child.id === '' && child.classList.value === '') {
+    //             console.log(`Обраний тег: ${child.tagName}, розміри: ${child.clientHeight} * ${child.clientWidth}`);
+    //         } else if (child.classList.value === '') {
+    //             console.log(`Обраний тег: ${child.tagName}, id: ${child.id}, розміри: ${child.clientHeight} * ${child.clientWidth}`);
+    //         } else if (child.id === ''){
+    //             console.log(`Обраний тег: ${child.tagName},класи: ${child.classList.value}, розміри: ${child.clientHeight} * ${child.clientWidth}`);
+    //         } else {
+    //             console.log(`Обраний тег: ${child.tagName}, id: ${child.id}, класи: ${child.classList.value}, розміри: ${child.clientHeight} * ${child.clientWidth}`);
+    //         }
+    //     })
+    // }
+
+
+    // - Описати скріпт, котрий, якщо доєднати до будь-якої сторінки дозволить зробити наступне:
+    //     При лівому кліку миші  зробить popup (спливаючий блок) в якому буде вся інформація про блок.
+    //     Інформація яку потрібно вивести в popup: Назва тегу, список класів, список ід, розміри в форматі висота*ширина
+
+    let children1 = document.body.children;
+
+    let first = document.getElementsByClassName('block')[0];
+    let id = document.getElementById('popup');
+    console.log(id);
+
+
+    for (const child of children1) {
+        child.style.position = 'relative';
+        child.addEventListener('click', function () {
+            first.classList.toggle('second');
+            first.style.position = 'absolute'
+            first.style.top = '100px';
+            first.style.left = '60px';
+            if (child.id === '' && child.classList.value === '') {
+                id.innerText = `Обраний тег: ${child.tagName}, розміри: ${child.clientHeight} * ${child.clientWidth}`;
+            } else if (child.classList.value === '') {
+                id.innerText = `Обраний тег: ${child.tagName}, id: ${child.id}, розміри: ${child.clientHeight} * ${child.clientWidth}`;
+            } else if (child.id === ''){
+                id.innerText = `Обраний тег: ${child.tagName}, класи: ${child.classList.value}, розміри: ${child.clientHeight} * ${child.clientWidth}`;
+            } else {
+                id.innerText = `Обраний тег: ${child.tagName}, id: ${child.id}, класи: ${child.classList.value}, розміри: ${child.clientHeight} * ${child.clientWidth}`;
+            }
+        })
+    }
+
+
+    // -- взять массив пользователей
+    // - Создать три чекбокса. Каждый из них активирует фильтр для вышеуказаного массива. Фильтры могут работать как вместе так и по отдельности.
+    // 1й - отфильтровывает пользователей со статусом false (осталяет со статусом false)
+    // 2й - оставляет старше 29 лет включительно
+    // 3й - оставляет тех у кого город киев
+    // Данные выводить в документ
+
+    let usersWithAddress = [
+        {id:1,name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+        {id:2,name: 'petya', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 1}},
+        {id:3,name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}},
+        {id:4,name: 'olya', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 90}},
+        {id:5,name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 115}},
+        {id:6,name: 'anya', age: 31, status: false, address: {city: 'Kyiv', street: 'Shevchenko', number: 2}},
+        {id:7,name: 'oleg', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 22}},
+        {id:8,name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 43}},
+        {id:9,name: 'masha', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 12}},
+        {id:10,name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+        {id:11,name: 'max', age: 31, status: true, address: {city: 'Ternopil', street: 'Shevchenko', number: 121}}
+    ];
+
+    let check = document.forms.check;
+    console.log(check);
+
+    check.status.onclick = function () {
+        if (check.status.checked) {
+            console.log(usersWithAddress.filter(value => !value.status))
+        } else if (check.age.checked) {
+            console.log(usersWithAddress.filter(value => value.age >= 29))
+        } else if (check.city.checked) {
+            console.log(usersWithAddress.filter(value => value.address.city === 'Kyiv'))
+        } else if (check.status.checked && check.age.checked && check.city.checked) {
+            console.log(usersWithAddress.filter(value => !value.status))
+            console.log(usersWithAddress.filter(value => value.age >= 29))
+            console.log(usersWithAddress.filter(value => value.address.city === 'Kyiv'))
+        }
+    }
+
+
+</script>
+</body>
+</html>
