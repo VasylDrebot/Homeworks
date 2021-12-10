@@ -53,8 +53,8 @@
     function getClasses (element) {
         if (element.children.length) {
             for (const elem of element.children) {
-                if (element.classList.value !== '') {
-                    let splitted = element.classList.value.split(' ')
+                if (elem.classList.value !== '') {
+                    let splitted = elem.classList.value.split(' ')
                     arr = arr.concat(splitted);
                 }
                 getClasses(elem);
