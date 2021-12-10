@@ -18,16 +18,16 @@ let item4 = document.getElementById('item4');
 let item5 = document.getElementById('item5');
 let btn1 = document.getElementById('btn1');
 
-let key = 'car';
-localStorage.setItem(key, JSON.stringify([]));
+let carKey = 'cars';
+localStorage.setItem(carKey, JSON.stringify([]));
 
 btn1.onclick = function () {
     let model = item3.value;
     let type = item4.value;
     let volume = item5.value;
 
-    let item = JSON.parse(localStorage.getItem(key));
+    let item = JSON.parse(localStorage.getItem(carKey));
     item.push({model: model, type: type, volume: volume});
-    localStorage.setItem(key, JSON.stringify(item));
+    localStorage.setItem(carKey, JSON.stringify(item));
 
 }
