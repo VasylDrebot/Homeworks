@@ -1,0 +1,31 @@
+body {
+    background-color: lightgrey;
+}
+.block {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.block1 {
+    width: 16%;
+    margin-bottom: 36px;
+    border-bottom: 2px solid cornflowerblue;
+    text-align: justify;
+}
+
+
+.border {
+    border: 2px solid chocolate;
+    border-radius: 5%;
+    padding: 10px;
+    background-color: darkcyan;
+}
+.border1 {
+    border: 2px solid darkslategrey;
+    border-radius: 10%;
+    background-color: cornflowerblue;
+    width: 25%;
+    padding: 10px;
+}
