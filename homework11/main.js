@@ -13,21 +13,21 @@ btn.onclick = function () {
 // -створити форму з інпутами для model,type та volume автівки.
 //     при відпарвці форми об'єкти зберігаються в масиві в локальному сховищі.
 
-let item3 = document.getElementById('item3');
-let item4 = document.getElementById('item4');
-let item5 = document.getElementById('item5');
-let btn1 = document.getElementById('btn1');
+let carForm = document.forms.car;
 
-let carKey = 'cars';
-localStorage.setItem(carKey, JSON.stringify([]));
 
-btn1.onclick = function () {
-    let model = item3.value;
-    let type = item4.value;
-    let volume = item5.value;
 
-    let item = JSON.parse(localStorage.getItem(carKey));
-    item.push({model: model, type: type, volume: volume});
-    localStorage.setItem(carKey, JSON.stringify(item));
+
+carForm.onsubmit = function (e) {
+    e.preventDefault();
+
+    let model = carForm.model.value;
+    let type = carForm.type.value;
+    let volume = carForm.volume.value;
+
+    let carKey = 'cars';
+    let cars = JSON.parse(localStorage.getItem(carKey)) || [];
+    cars.push({model: model, type: type, volume: volume});
+    localStorage.setItem(carKey, JSON.stringify(cars));
 
 }
