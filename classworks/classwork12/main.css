@@ -9,12 +9,11 @@ body {
 }
 
 .block1 {
-    width: 16%;
+    width: 25%;
     margin-bottom: 36px;
     border-bottom: 2px solid cornflowerblue;
     text-align: justify;
     position: relative;
-    height: 190px;
 }
 
 
@@ -26,12 +25,17 @@ body {
 }
 
 .btn {
-    position: absolute;
-    top: 125px;
+    margin-left: 93px;
+    position: relative;
 }
 
-
-.btn1 {
-    position: absolute;
-    top: 100px;
+.title {
+    text-align: center;
+}
+.block2 {
+    border: 1px solid gold;
+    border-radius: 10%;
+    background-color: mediumseagreen;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }

@@ -9,23 +9,33 @@ fetch('https://jsonplaceholder.typicode.com/posts')
         let mainDiv = document.createElement('div');
         mainDiv.classList.add('block');
         for (const post of posts) {
+            console.log(post);
             let div1 = document.createElement('div');
             div1.classList.add('block1', 'border');
             let button = document.createElement('button');
             button.classList.add('btn');
             button.innerText = 'Show comments';
-            div1.innerHTML = `<h3>ID - ${post.id}</h3> <p>Title: ${post.title}</p>`;
+            div1.innerHTML = `<h3 class="title">ID - ${post.id}</h3> <p class="title">Title: ${post.title}</p> <p>Info: ${post.body}</p>`;
 
 
             button.onclick = function () {
-                div1.innerHTML = `<p>${post.body}</p>`;
-                let button1 = document.createElement('button');
-                button1.innerText = 'Hide comments';
-                button1.onclick = function () {
-                    div1.innerHTML = `<h3>ID - ${post.id}</h3> <p>Title: ${post.title}</p>`;
-                    div1.append(button);
-                }
-                div1.append(button1);
+                fetch('https://jsonplaceholder.typicode.com/comments')
+                    .then(response => response.json())
+                    .then(comments => {
+                        for (const comment of comments) {
+                            console.log(comment);
+                            if (post.id === comment.postId) {
+                                let div2 = document.createElement('div');
+                                div2.classList.add('block2');
+                                div2.innerHTML = `<h4 class="title">Comments id - ${comment.id}</h4>
+                                     <p class="title">Name - ${comment.name}</p>
+                                     <h3>Email: ${comment.email}</h3>
+                                     <p>Info - ${comment.body}</p>`;
+                                div1.append(div2);
+                            }
+                        }
+                    })
+                button.disabled = true;
             }
             mainDiv.append(div1);
             div1.append(button);
