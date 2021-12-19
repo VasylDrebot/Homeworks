@@ -16,12 +16,11 @@
             setTimeout(() => {
                 if (alarmWentOff) {
                     console.log('Wake up');
-                    resolve('You should wake up')
+                    resolve('Get up');
                 } else {
                     console.log('You have day off');
                     reject ();
                 }
-
             }, 3000)
         })
     }
@@ -32,7 +31,7 @@
             setTimeout(() => {
                 if (enoughTime) {
                     console.log('Have breakfast');
-                    resolve();
+                    resolve('Yummi, yummi');
                 } else {
                     console.log('You can eat on the way to work')
                     reject ();
@@ -66,7 +65,7 @@
             setTimeout(() => {
                 if (!busIsComingLater) {
                     console.log('Wait for a bus');
-                    resolve();
+                    resolve('You are lucky!');
                 } else {
                     console.log('Take a taxi')
                     reject();
@@ -81,7 +80,7 @@
         return new Promise((resolve) => {
             setTimeout(() => {
                 console.log('Have lunch');
-                resolve();
+                resolve('Take your time');
             }, 2500)
         })
     }
@@ -162,6 +161,52 @@
     }
 
     schedule();
+
+    // wakeUp(true)
+    //     .then(result => {
+    //         console.log(result)
+    //
+    //         return eat(true)
+    //     })
+    //     .then(food => {
+    //         console.log('Yummi, yummi');
+    //         return shower(true);
+    //     })
+    //     .then(showerFinished => {
+    //         console.log('Very nice');
+    //         return waitForBus(false);
+    //     })
+    //     .then(busArrived => {
+    //         console.log(busArrived);
+    //         return lunch();
+    //     })
+    //     .then(lunchTime => {
+    //         console.log(lunchTime);
+    //         return goToTheGym();
+    //     })
+    //     .then(getFit => {
+    //         console.log('Well done')
+    //         return meetFriends(false);
+    //     })
+    //     .then(meeting => {
+    //         console.log('Nice meeting')
+    //         return shopping();
+    //     })
+    //     .then(products => {
+    //         console.log('A lot of discounts');
+    //         return cooking();
+    //     })
+    //     .then(cookingDone => {
+    //         console.log('Good job')
+    //         return landry();
+    //     })
+    //     .then(landryDone => {
+    //         console.log('Good')
+    //         return read();
+    //     })
+    //     .then(readingDone => {
+    //         console.log('Keep doing it');
+    //     })
 
 
 

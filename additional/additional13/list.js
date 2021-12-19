@@ -1,6 +1,6 @@
 let goods = JSON.parse(localStorage.getItem('goods'));
 
-for (const good of goods) {
+goods.forEach((good, index) => {
     let div = document.createElement('div');
     div.classList.add('main');
     let div1 = document.createElement('div');
@@ -11,15 +11,16 @@ for (const good of goods) {
     let image = document.createElement('img');
     image.src = `${good.picture}`;
     image.style.width = '250px';
+    console.log(index);
 
     btn.onclick = function () {
         let items = JSON.parse(localStorage.getItem("goods"));
-        items.splice(good, 1);
+        items.splice(index, 1);
         localStorage.setItem('goods', JSON.stringify(items));
     }
     div.append(div1, image, btn);
     document.body.append(div);
-}
+});
 
 let button = document.createElement('button');
 button.innerText = 'Remove all goods';
