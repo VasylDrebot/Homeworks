@@ -31,7 +31,7 @@
             setTimeout(() => {
                 if (enoughTime) {
                     console.log('Have breakfast');
-                    resolve('Yummi, yummi');
+                    resolve('Yummy, yummy');
                 } else {
                     console.log('You can eat on the way to work')
                     reject ();
@@ -140,13 +140,14 @@
         return new Promise((resolve) => {
             setTimeout(() => {
                 console.log('Read a book');
-                resolve();
+                resolve('Keep on doing it');
             }, 500)
         })
     }
 
 
     async function schedule() {
+        try {
             await wakeUp(true);
             await eat(true);
             await shower(true);
@@ -158,6 +159,10 @@
             await cooking();
             await landry();
             await read();
+        } catch (e) {
+            console.error(e);
+        }
+
     }
 
     schedule();
@@ -165,11 +170,10 @@
     // wakeUp(true)
     //     .then(result => {
     //         console.log(result)
-    //
     //         return eat(true)
     //     })
     //     .then(food => {
-    //         console.log('Yummi, yummi');
+    //         console.log(food);
     //         return shower(true);
     //     })
     //     .then(showerFinished => {
@@ -201,12 +205,207 @@
     //         return landry();
     //     })
     //     .then(landryDone => {
-    //         console.log('Good')
+    //         console.log('Well done');
     //         return read();
     //     })
     //     .then(readingDone => {
-    //         console.log('Keep doing it');
+    //         console.log(readingDone);
     //     })
+    //     .catch(e => {
+    //         console.error(e);
+    //     })
+
+
+    // function wakeUp (alarmWentOff, callback) {
+    //         setTimeout(() => {
+    //             if (alarmWentOff) {
+    //                 callback(null, 'Wake up');
+    //                 return;
+    //             }
+    //
+    //                 callback('You have day off');
+    //         }, 3000)
+    // }
+    //
+    //
+    // function eat (enoughTime, callback) {
+    //         setTimeout(() => {
+    //             if (enoughTime) {
+    //                 callback(null,   'Have breakfast');
+    //                 return;
+    //             }
+    //
+    //                 callback('You can eat on the way to work')
+    //
+    //         }, 1000)
+    // }
+    //
+    //
+    // function shower (hotWaterIsAvailable, callback) {
+    //         setTimeout(() => {
+    //             if (hotWaterIsAvailable) {
+    //                 callback(null, 'Take a shower');
+    //                 return;
+    //             }
+    //                 callback('You need to heat some water')
+    //
+    //         }, 2000)
+    // }
+    //
+    //
+    // function waitForBus (busIsComingLater, callback) {
+    //     setTimeout(() => {
+    //         if (!busIsComingLater) {
+    //             callback(null, 'Wait for a bus');
+    //             return;
+    //         }
+    //             callback('Take a taxi')
+    //
+    //     }, 5000)
+    // }
+    //
+    //
+    // function lunch (callback) {
+    //         setTimeout(() => {
+    //             callback(null, 'Have lunch');
+    //             return;
+    //         }, 2500)
+    // }
+    //
+    // function goToTheGym (callback) {
+    //         setTimeout(() => {
+    //             callback(null, 'Go to the gym');
+    //             return;
+    //         }, 1500)
+    // }
+    //
+    // function meetFriends (itIsRaining, callback) {
+    //         setTimeout(() => {
+    //             if (!itIsRaining) {
+    //                 callback(null, 'Meet your friends');
+    //                 return;
+    //             }
+    //                 callback('Next time');
+    //
+    //         }, 1000)
+    // }
+    //
+    // function shopping (callback) {
+    //         setTimeout(() => {
+    //             callback(null, 'Go to the supermarket');
+    //             return;
+    //         }, 2500)
+    // }
+    //
+    // function cooking (callback) {
+    //         setTimeout(() => {
+    //             callback(null, 'Cook something for dinner');
+    //             return;
+    //         }, 2500)
+    // }
+    //
+    // function landry (callback) {
+    //         setTimeout(() => {
+    //             callback(null, 'Do the laundry');
+    //             return;
+    //         }, 2000)
+    // }
+    //
+    // function read (callback) {
+    //         setTimeout(() => {
+    //             callback(null, 'Read a book');
+    //             return;
+    //         }, 500)
+    // }
+
+    // wakeUp(true, (error, wakingUp) => {
+    //     if (error) {
+    //         console.error('Something went wrong', error)
+    //         return
+    //     }
+    //     console.log(wakingUp)
+    //
+    //     eat(true, (error, breakfast) => {
+    //         if (error) {
+    //             console.error('Something went wrong', error)
+    //             return
+    //         }
+    //         console.log(breakfast)
+    //         console.log('Yummy, yummy');
+    //
+    //         shower(true, (error, showerDone) => {
+    //             if (error) {
+    //                 console.error('Something went wrong', error)
+    //                 return
+    //             }
+    //             console.log(showerDone)
+    //
+    //             waitForBus(false, (error, busArrived) => {
+    //                 if (error) {
+    //                     console.error('Something went wrong', error)
+    //                     return
+    //                 }
+    //                 console.log(busArrived);
+    //
+    //                 lunch((error, food) => {
+    //                     if (error) {
+    //                         console.error('Something went wrong', error)
+    //                         return
+    //                     }
+    //                     console.log(food);
+    //
+    //                     goToTheGym((error, gym) => {
+    //                         if (error) {
+    //                             console.error('Something went wrong', error)
+    //                             return
+    //                         }
+    //                         console.log(gym);
+    //
+    //                         meetFriends(false, (error, meeting) => {
+    //                             if (error) {
+    //                                 console.error('Something went wrong', error)
+    //                                 return
+    //                             }
+    //                             console.log(meeting);
+    //
+    //                             shopping((error, products) => {
+    //                                 if (error) {
+    //                                     console.error('Something went wrong', error)
+    //                                     return
+    //                                 }
+    //                                 console.log(products)
+    //
+    //                                 cooking((error, cooking) => {
+    //                                     if (error) {
+    //                                         console.error('Something went wrong', error)
+    //                                         return
+    //                                     }
+    //                                     console.log(cooking);
+    //
+    //                                     landry((error, laundryDone) => {
+    //                                         if (error) {
+    //                                             console.error('Something went wrong', error)
+    //                                             return
+    //                                         }
+    //                                         console.log(laundryDone);
+    //
+    //                                         read((error, reading) => {
+    //                                             if (error) {
+    //                                                 console.error('Something went wrong', error)
+    //                                                 return
+    //                                             }
+    //                                             console.log(reading);
+    //                                         })
+    //                                     })
+    //                                 })
+    //                             })
+    //                         })
+    //                     })
+    //                 })
+    //             })
+    //         })
+    //     })
+    // })
 
 
 
